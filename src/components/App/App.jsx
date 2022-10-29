@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
-  });
+  }, [contacts]);
 
   const formSubmitHandler = data => {
     const newContact = { ...data, id: nanoid() };
@@ -46,7 +46,7 @@ const App = () => {
     return filteredContacts;
   };
   const filteredContacts = getFilteredContacts();
-  console.log(getFilteredContacts());
+ 
 
   return (
     <>
